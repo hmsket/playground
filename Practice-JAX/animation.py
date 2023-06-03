@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 
-def plot_hist(data):
+def plot_hist(idx):
     plt.cla()
-    x = np.random.normal(0, 10, 1000)
-    frame = plt.hist(x, bins=20, range=(-50,50), density=True, ec='black')
+    x = np.random.normal(0, 10, 25)
+    x = np.reshape(x, (5,5))
+    frame = plt.imshow(x, cmap=plt.cm.gray_r)
 
 
 fig = plt.figure(figsize=(5,5), facecolor='lightblue')
