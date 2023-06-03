@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 
-def plot_hist(idx):
+def plot_hist(idx, array):
     plt.cla()
     x = np.random.normal(0, 10, 25)
     x = np.reshape(x, (5,5))
@@ -17,6 +17,6 @@ def plot_hist(idx):
 
 fig = plt.figure(figsize=(5,5), facecolor='lightblue')
 
-ani = FuncAnimation(fig, plot_hist, interval=10, frames=10)
+ani = FuncAnimation(fig, plot_hist, fargs=[[1,2]], interval=10, frames=10)
 
 ani.save('./hist.gif', writer='pillow')
